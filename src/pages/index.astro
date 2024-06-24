@@ -1,6 +1,7 @@
 ---
 	// Código Server Side Only - Momento de construcción BUILD TIME
-	import type { PokemonListResponse } from '../interfaces/pokemon-list.response'; 
+	import PokemonCard from '../components/pokemons/PokemonCard.astro';
+import type { PokemonListResponse } from '../interfaces/pokemon-list.response'; 
 
 	import MainLayout from "../layouts/MainLayout.astro"
 
@@ -16,14 +17,19 @@
 	<MainLayout title={title}	>
 		<h1 class="text-3xl">Listado de Pokémons</h1>
 		<hr> 
-		<ul>
-			{
-				data.results.map((pokemon) => (
-					<li>{pokemon.name}</li>
-				)
-			)
-			}
-		</ul>
+		<section 
+			aria-label="Listado de pokemones"
+			class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4" 
+		>
+			{data.results.map(({name, url}) => (
+			<PokemonCard 
+				name={name} 
+				url={url}
+			/>
+			))}
+
+		</section>
+		
 	</MainLayout>
 
 
