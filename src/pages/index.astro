@@ -1,16 +1,15 @@
 ---
+	// Código Server Side Only - Momento de construcción BUILD TIME
+	import MainLayout from "../layouts/MainLayout.astro"
 
+	const title = 'Pokemon Static | Home page';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-3xl text-blue-500">Astro</h1>
-	</body>
-</html>
+	<MainLayout title={title}	>
+		<h1 class="text-3xl">Astro</h1>
+	</MainLayout>
+
+
+
+
+
