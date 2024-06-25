@@ -9,7 +9,7 @@ export const getStaticPaths = (async () => {
     
     const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
     const { results } = await resp.json() as PokemonListResponse;
-    console.log(results)
+
  
     return results.map( ({ name, url }) => ({
         params: {name},
@@ -25,12 +25,12 @@ const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
 ---
 <MainLayout title="algun nombre">
 
-    <section class="mt-10 mx-10 flex flex-col justify-center items-center">
+    <section class="mt-10 mx-10 flex flex-col justify-center items-center ">
     <div>
         <a href="/">Regresar</a>
         <h1 class="text-5xl capitalize">{ name }</h1>
     </div>
-    <PokemonCard name={name} url={url}/>
+    <PokemonCard name={name} url={url}  />
     <audio controls class="mt-5">
         <source src={audioSrc}>
         Your browser does not support the audio element   
