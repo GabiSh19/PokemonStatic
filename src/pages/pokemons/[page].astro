@@ -1,15 +1,21 @@
 ---
+	import type { GetStaticPaths } from "astro";
 	// Código Server Side Only - Momento de construcción BUILD TIME
-	import PokemonCard from '../components/pokemons/PokemonCard.astro';
-import type { PokemonListResponse } from '../interfaces/pokemon-list.response'; 
 
-	import MainLayout from "../layouts/MainLayout.astro"
+	import PokemonCard from '../../components/pokemons/PokemonCard.astro';
+	import type { PokemonListResponse } from '../../interfaces/pokemon-list.response'; 
+
+	import MainLayout from "../../layouts/MainLayout.astro"
 
 	const title = 'Pokemon Static | Home page';
 
-	const resp = await fetch('https://pokeapi.co/api/v2/pokemon');
-	const data = await resp.json() as PokemonListResponse;
-	console.log("🚀 ~ data:", data)
+	export const getStaticPaths = (async () => {
+
+		const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+		const { results } = await resp.json() as PokemonListResponse;
+		
+		return [];
+	}) satisfies GetStaticPaths;
 	
 	
 ---
