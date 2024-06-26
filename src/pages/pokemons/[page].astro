@@ -8,13 +8,16 @@
 	import MainLayout from "../../layouts/MainLayout.astro"
 
 	const title = 'Pokemon Static | Home page';
+	
+	//Esto me lo generó el GetStaticPaths
+	const { page } = Astro.props;
 
-	export const getStaticPaths = (async () => {
+	export const getStaticPaths = (async ({ paginate }) => {
 
 		const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
 		const { results } = await resp.json() as PokemonListResponse;
 		
-		return [];
+		return paginate(results, {pageSize: 10});
 	}) satisfies GetStaticPaths;
 	
 	
