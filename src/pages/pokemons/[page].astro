@@ -49,7 +49,19 @@
 				)
 			} -->
 
-			<a class="btn" href={page.url.next}>Siguientes</a>
+			<a class:list={[
+				'btn',
+				{
+					disabled: !page.url.prev
+				} 
+			]} href={page.url.prev}>Anterior</a>
+
+			<a class:list={[
+				'btn',
+				{
+					disabled: !page.url.next
+				} 
+			]} href={page.url.next}>Siguiente</a>
 
 			<div class="flex flex-1"></div>
 
