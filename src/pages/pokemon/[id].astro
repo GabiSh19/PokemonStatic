@@ -20,15 +20,20 @@ export const getStaticPaths = (async () => {
     const { results } = await resp.json() as PokemonListResponse;
 
  
-    return results.map( ({ name, url }) => ({
-        params: {name},
-        props: {name, url}
-    }) )
+    return results.map( ({ name, url }) => {
+
+        const id = url.split('/').at(-2); 
+
+        return {
+            params: {id: id},
+            props: {name, url}
+        }
+    })  
 }) satisfies GetStaticPaths;
 
-
+const { id } = Astro.params;
 const { name, url } = Astro.props;
-const id = url.split('/').at(-2);
+
 const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${ id }.ogg`;
 
 ---
