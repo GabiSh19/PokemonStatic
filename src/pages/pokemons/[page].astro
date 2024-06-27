@@ -40,12 +40,20 @@
 		</section>
 
 		<section class="flex mt-10 gap-2 items-center">
-			<a class="btn" href={page.url.prev}>Anteriores</a>
+
+			<!-- {
+				page.url.prev && (
+					<a class="btn" href={page.url.prev}>
+					Anteriores
+					</a>
+				)
+			} -->
+
 			<a class="btn" href={page.url.next}>Siguientes</a>
 
 			<div class="flex flex-1"></div>
 
-			<span class="text-xl font-bold text-red-500">Página { page.currentPage }</span>
+			<span class="text-xl font-bold">Página { page.currentPage }</span>
 
 		</section>
 		
