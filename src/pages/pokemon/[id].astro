@@ -1,18 +1,14 @@
-<!-- ---
-import MainLayout from "../../layouts/MainLayout.astro";
----
-
-<MainLayout title="hola">
-
-    <h1>Hola mundo</h1>
-
-</MainLayout> -->
 ---
 import type { GetStaticPaths } from "astro";
 import type { PokemonListResponse } from "../../interfaces/pokemon-list.response";
 
 import MainLayout from "../../layouts/MainLayout.astro";
-import PokemonCard from "../../components/pokemons/PokemonCard.astro";
+
+// Path absoluto
+import PokemonCard from "src/components/pokemons/PokemonCard.astro";
+
+// Path relativo
+// import PokemonCard from "../../components/pokemons/PokemonCard.astro";
 
 export const getStaticPaths = (async () => {
     
