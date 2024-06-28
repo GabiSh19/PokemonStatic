@@ -1,6 +1,7 @@
 ---
 import ViewTransitions from 'astro/components/ViewTransitions.astro';
-import { siteInfo } from 'src/const/site-info';
+import { siteInfo } from '../const/site-info';
+
 
 interface Props {
     title?: string;
@@ -8,6 +9,7 @@ interface Props {
     description?: string;
 
 }
+
 
 const { 
 	title = siteInfo.title, 
@@ -26,6 +28,7 @@ const {
 
 		<!-- SEO -->
 		<meta name = "description" content = {description}>
+		<meta name = "author" content = {'Gabriela Soto H'}>
 		
 		<!-- OG META TAGS -->
 		<meta property = "og:title" content = {title}>

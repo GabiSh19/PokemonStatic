@@ -21,9 +21,14 @@ export const getStaticPaths = (async () => {
 const { name, url } = Astro.props;
 const id = url.split('/').at(-2);
 const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${ id }.ogg`;
+const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
 ---
-<MainLayout title="algun nombre">
+<MainLayout 
+    title={`Pokémon - #${ id } ${ name }`}
+    description={`Información sobre el pokémon ${ name }` }    
+    image = {imageSrc}
+    >
 
     <section class="mt-10 mx-10 flex flex-col justify-center items-center ">
     <div>

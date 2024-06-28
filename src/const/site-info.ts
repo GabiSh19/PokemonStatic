@@ -6,3 +6,4 @@ export const siteInfo = {
     description: 'Listado de pokemones',
 
 }
+
