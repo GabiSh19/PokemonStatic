@@ -22,7 +22,7 @@ export const getStaticPaths = (async () => {
     return results.map( ({ name, url }) => {
 
         const id = url.split('/').at(-2); 
-
+        
         return {
             params: {id: id},
             props: {name, url}
