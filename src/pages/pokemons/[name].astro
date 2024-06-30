@@ -71,11 +71,18 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
     const btnFavoritePokemon = document.querySelector('#btn-favorite') as HTMLButtonElement;
     const name = btnFavoritePokemon.dataset.name ?? ''; 
     const id = btnFavoritePokemon.dataset.id ?? '';
+    const isFavorite = favoritePokemons.some((fav) => fav.name === name);
 
     const heartOutline = btnFavoritePokemon.querySelector('[data-outline') as HTMLElement;
     const heartFull = btnFavoritePokemon.querySelector('[data-full') as HTMLElement;
     
     console.log(name, id);
+
+    //Hacer tarea: hacer función para mostrar u ocultar el corazón lleno
+    if (isFavorite) {
+        heartOutline.classList.add('hidden');
+        heartFull.classList.remove('hidden');
+    }
 
     const toggleFavorite = () => {
         const isFavorite = favoritePokemons.some((fav) => fav.name === name);
