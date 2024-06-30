@@ -64,6 +64,11 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
         id: number;
     }
 
+    // document.addEventListener('astro:page-load', () => {
+        // va todo lo de abajo junto con:
+        // if (!btnFavoritePokemon) return;
+    // })
+
     const btnFavoritePokemon = document.querySelector('#btn-favorite') as HTMLButtonElement;
     const name = btnFavoritePokemon.dataset.name;
     const id = btnFavoritePokemon.dataset.id;
