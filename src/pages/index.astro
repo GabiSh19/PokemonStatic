@@ -1,7 +1,8 @@
 ---
 	// Código Server Side Only - Momento de construcción BUILD TIME
 	import PokemonCard from '../components/pokemons/PokemonCard.astro';
-import type { PokemonListResponse } from '../interfaces/pokemon-list.response'; 
+	import type { PokemonListResponse } from '../interfaces/pokemon-list.response'; 
+	import Title from '@components/shared/Title.astro';
 
 	import MainLayout from "../layouts/MainLayout.astro"
 
@@ -15,7 +16,7 @@ import type { PokemonListResponse } from '../interfaces/pokemon-list.response';
 ---
 
 	<MainLayout title={title}	>
-		<h1 class="text-3xl">Listado de Pokémons</h1>
+		<Title>Listado</Title>
 		<hr> 
 		<section 
 			aria-label="Listado de pokemones"
