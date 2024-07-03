@@ -2,21 +2,24 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import Title from '@components/shared/Title.astro';
 import { Counter } from '@components/Counter';
+import { FavoritePokemons } from '@components/pokemons/FavoritePokemons';
 
 
 ---
 
 <MainLayout title="favoritos"> 
     <Title>Favoritos</Title>
+
+    <FavoritePokemons />
     
-    <video controls="" autoplay="" transition:persist>
+    <!-- <video controls="" autoplay="" transition:persist>
         <source src="https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4" type="video/mp4">
     </video>
 
 <Counter transition:persist="counter" 
         transition:persist-props
         client:load 
-        initValue={15}/> 
+        initValue={15}/>  -->
 
 
 
