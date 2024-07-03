@@ -9,4 +9,9 @@ import { Counter } from '@components/Counter';
 <MainLayout title="favoritos"> 
 <Title>Favoritos</Title>
 
+<Counter transition:persist="counter" 
+        transition:persist-props
+        client:load 
+        initValue={15}/> 
+
 </MainLayout>
