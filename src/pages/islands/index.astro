@@ -18,6 +18,9 @@ const conterValue = 20;
 
 </div>
 
-<Counter client:load />
+<Counter 
+    transition:persist = "counter"
+    client: visible  
+    initValue={conterValue}/>
 
 </MainLayout>

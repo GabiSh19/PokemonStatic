@@ -1,13 +1,13 @@
-import { createSignal } from "solid-js"
+import { createSignal, type Component } from "solid-js"
 
 interface Props {
     initValue: number,
 }
 
 
-export const Counter = (props: Props) => {
+export const Counter: Component<Props>  = (props) => {
 
-    const [ counter, setCounter ] = createSignal(10);
+    const [ counter, setCounter ] = createSignal(props.initValue);
 
 
     return (
